@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ahmad-al-zuhair.netlify.app/sitemap.xml

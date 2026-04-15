@@ -281,22 +281,5 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     initClock();
 
-    // 2. Form Submission logic
-    const contactForm = document.getElementById('contact-form');
-    const successMsg = document.getElementById('form-success');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            // Netlify handles the actual POST, but we handle the UI feedback
-            // If checking locally, we prevent default to show the success state
-            if (!window.location.host.includes('netlify')) {
-                e.preventDefault();
-            }
-            
-            successMsg.classList.add('active');
-            setTimeout(() => {
-                successMsg.classList.remove('active');
-                contactForm.reset();
-            }, 5000);
-        });
-    }
+
 });
