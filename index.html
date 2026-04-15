@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmad AL Zuhair — Lead Frontend & AI Ops Engineer</title>
+    <meta name="description"
+        content="Portfolio of Ahmad AL Zuhair, Lead Frontend Developer and AI Ops Engineer specialized in React, AI models, and intuitive interfaces.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Permanent+Marker&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Favicons -->
+    <link id="favicon" rel="icon" type="image/png" href="assets/logos/whitemodelogotransparent.png">
+    <link rel="apple-touch-icon" href="assets/logos/whitemodelogo.png">
+
+    <!-- SEO / Social Meta Tags -->
+    <meta property="og:title" content="Ahmad AL Zuhair — Lead Frontend & AI Ops Engineer">
+    <meta property="og:description" content="Premium portfolio of a Lead Frontend Developer and AI Ops specialist.">
+    <meta property="og:image" content="assets/logos/whitemodelogo.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="assets/logos/darkmodelogo.png">
+</head>
+
+<body>
+    <!-- Transition Overlays -->
+    <div id="transition-overlay" class="transition-overlay">
+        <h1 id="transition-title"></h1>
+    </div>
+    <div id="theme-wipe" class="theme-wipe"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-pill">
+            <a href="#home" class="nav-item active" data-section="home" aria-label="Home">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+                <span class="nav-label">Home</span>
+            </a>
+            <a href="#stack" class="nav-item" data-section="stack" aria-label="Stack">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                    <polyline points="2 17 12 22 22 17" />
+                    <polyline points="2 12 12 17 22 12" />
+                </svg>
+                <span class="nav-label">Stack</span>
+            </a>
+            <a href="#projects" class="nav-item" data-section="projects" aria-label="Projects">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="14" x="2" y="7" rx="2" ry="2" />
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                </svg>
+                <span class="nav-label">Projects</span>
+            </a>
+            <a href="#contact" class="nav-item" data-section="contact" aria-label="Contact">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+                <span class="nav-label">Contact</span>
+            </a>
+            <div class="nav-separator"></div>
+            <a href="#" class="nav-item" aria-label="Download CV">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                    <polyline points="10 9 9 9 8 9" />
+                </svg>
+                <span class="nav-label">CV</span>
+            </a>
+            <div class="nav-separator"></div>
+            <button class="nav-item" id="theme-toggle" aria-label="Toggle Theme">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5" />
+                    <line x1="12" y1="1" x2="12" y2="3" />
+                    <line x1="12" y1="21" x2="12" y2="23" />
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                    <line x1="1" y1="12" x2="3" y2="12" />
+                    <line x1="21" y1="12" x2="23" y2="12" />
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+                <span class="nav-label">Theme</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Branding Mark -->
+    <div class="site-branding">
+        <img src="assets/logos/whitemodelogotransparent.png" alt="AL Zuhair Logo" class="brand-logo light-logo">
+        <img src="assets/logos/darkmodelogotransparent.png" alt="AL Zuhair Logo" class="brand-logo dark-logo">
+    </div>
+
+    <main id="main-content">
+        <!-- Section: Home -->
+        <section id="home" class="section active">
+            <div class="content hero">
+                <div class="hero-text">
+                    <p class="accent-text">THIS IS</p>
+                    <h1 class="main-title">AHMAD<br>AL ZUHAIR</h1>
+                    <p class="accent-text">LEAD FRONTEND &amp; AI OPS ENGINEER</p>
+
+                    <div class="status-container reveal-up">
+                        <span class="status-badge">
+                            <span class="dot"></span> Available
+                        </span>
+                        <span class="location-badge">UTC+03:00</span>
+                    </div>
+                </div>
+
+                <div class="hero-image-wrapper reveal-up">
+                    <div class="image-container">
+                        <img src="assets/ahmad.jpg" alt="Ahmad AL Zuhair" class="profile-img">
+                        <div class="coord v-coord">4.0</div>
+                        <div class="coord h-coord">5.0</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-hint reveal-up">
+                <button id="next-section-btn" class="btn-scroll">
+                    Projects
+                </button>
+            </div>
+
+            <!-- Decorative Elements -->
+            <div class="deco dots"></div>
+            <div class="deco square sq-1"></div>
+            <div class="deco square sq-2"></div>
+        </section>
+
+        <!-- Section: Stack -->
+        <section id="stack" class="section">
+            <div class="content">
+                <h2 class="section-heading">Tech Stack</h2>
+                <div class="stack-grid">
+                    <!-- Web Core -->
+                    <div class="stack-item reveal-up">
+                        <div class="stack-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/html5.svg" alt="HTML5"></div>
+                        <span class="stack-name">HTML5</span>
+                    </div>
+                    <div class="stack-item reveal-up">
+                        <div class="stack-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/css3.svg" alt="CSS3"></div>
+                        <span class="stack-name">CSS3</span>
+                    </div>
+                    <div class="stack-item reveal-up">
+                        <div class="stack-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/javascript.svg" alt="JS"></div>
+                        <span class="stack-name">JavaScript</span>
+                    </div>
+                    <div class="stack-item reveal-up">
+                        <div class="stack-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/typescript.svg" alt="TS"></div>
+                        <span class="stack-name">TypeScript</span>
+                    </div>
+
+                    <!-- Frameworks -->
+                    <div class="stack-item reveal-up">
+                        <div class="stack-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/react.svg" alt="React"></div>
+                        <span class="stack-name">React</span>
+                    </div>
+                    <div class="stack-item reveal-up">
+                        <div class="stack-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/react.svg" alt="React Native"></div>
+                        <span class="stack-name">React Native</span>
+                    </div>
+                    <div class="stack-item reveal-up">
+                        <div class="stack-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/nextdotjs.svg" alt="Next.js"></div>
+                        <span class="stack-name">Next.js</span>
+                    </div>
+                    <div class="stack-item reveal-up">
+                        <div class="stack-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/angular.svg" alt="Angular"></div>
+                        <span class="stack-name">Angular</span>
+                    </div>
+                    <div class="stack-item reveal-up">
+                        <div class="stack-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/angularjs.svg" alt="AngularJS"></div>
+                        <span class="stack-name">AngularJS</span>
+                    </div>
+                    <div class="stack-item reveal-up">
+                        <div class="stack-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/ionic.svg" alt="Ionic"></div>
+                        <span class="stack-name">Ionic</span>
+                    </div>
+
+                    <!-- Languages -->
+                    <div class="stack-item reveal-up">
+                        <div class="stack-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/python.svg" alt="Python"></div>
+                        <span class="stack-name">Python</span>
+                    </div>
+                    <div class="stack-item reveal-up">
+                        <div class="stack-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/openjdk.svg" alt="Java"></div>
+                        <span class="stack-name">Java</span>
+                    </div>
+                    <div class="stack-item reveal-up">
+                        <div class="stack-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/c.svg" alt="C"></div>
+                        <span class="stack-name">C</span>
+                    </div>
+                    <div class="stack-item reveal-up">
+                        <div class="stack-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/csharp.svg" alt="C#"></div>
+                        <span class="stack-name">C#</span>
+                    </div>
+                    <div class="stack-item reveal-up">
+                        <div class="stack-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/cplusplus.svg" alt="C++"></div>
+                        <span class="stack-name">C++</span>
+                    </div>
+                    <div class="stack-item reveal-up">
+                        <div class="stack-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/rust.svg" alt="Rust"></div>
+                        <span class="stack-name">Rust</span>
+                    </div>
+                    <div class="stack-item reveal-up">
+                        <div class="stack-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/swift.svg" alt="Swift"></div>
+                        <span class="stack-name">Swift</span>
+                    </div>
+
+                    <!-- Backend & Systems -->
+                    <div class="stack-item reveal-up">
+                        <div class="stack-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/django.svg" alt="Django"></div>
+                        <span class="stack-name">Django</span>
+                    </div>
+                    <div class="stack-item reveal-up">
+                        <div class="stack-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/nestjs.svg" alt="NestJS"></div>
+                        <span class="stack-name">NestJS</span>
+                    </div>
+                    <div class="stack-item reveal-up">
+                        <div class="stack-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/dotnet.svg" alt=".NET"></div>
+                        <span class="stack-name">.NET</span>
+                    </div>
+
+                    <!-- DevOps & Cloud -->
+                    <div class="stack-item reveal-up">
+                        <div class="stack-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/docker.svg" alt="Docker"></div>
+                        <span class="stack-name">Docker</span>
+                    </div>
+                    <div class="stack-item reveal-up">
+                        <div class="stack-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/amazonaws.svg" alt="AWS"></div>
+                        <span class="stack-name">AWS</span>
+                    </div>
+                    <div class="stack-item reveal-up">
+                        <div class="stack-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/googlecloud.svg" alt="GCP"></div>
+                        <span class="stack-name">GCP</span>
+                    </div>
+                    <div class="stack-item reveal-up">
+                        <div class="stack-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/firebase.svg" alt="Firebase"></div>
+                        <span class="stack-name">Firebase</span>
+                    </div>
+                    <div class="stack-item reveal-up">
+                        <div class="stack-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/git.svg" alt="Git"></div>
+                        <span class="stack-name">Git</span>
+                    </div>
+                    <div class="stack-item reveal-up">
+                        <div class="stack-icon"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/gnubash.svg" alt="Shell"></div>
+                        <span class="stack-name">Shell</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Decorative Elements -->
+            <div class="deco dots"></div>
+            <div class="deco square sq-stack-1"></div>
+            <div class="deco square sq-stack-2"></div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="content">
+                <div class="section-hero">
+                    <p class="accent-text">CHALLENGE &amp; IMPACT</p>
+                    <h1 class="main-title">FEATURED ENGINEERING</h1>
+                </div>
+                
+                <div class="projects-grid-wrapper">
+                    <!-- Hero Project: Taalomy -->
+                    <div class="taalomy-showcase card-gold">
+                    <div class="taalomy-info">
+                        <div class="project-tag">FEATURED WORK</div>
+                        <h3>Taalomy</h3>
+                        <p class="role-tag">Lead Full-Stack Engineer</p>
+                        <p class="project-brief">
+                            A comprehensive EdTech platform connecting institutions via a Dual-App Mobile Ecosystem. 
+                            Redefining academic engagement through real-time data sync and institutional optimization.
+                        </p>
+                        <ul class="project-bullets">
+                            <li>Dual-app ecosystem for Students and Lecturers built with React Native (Expo).</li>
+                            <li>Real-time attendance tracking via WebSockets (Django Channels).</li>
+                            <li>Integrated timetables and secure academic record management.</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://taalomy.com" target="_blank" class="link-chip">Main Site</a>
+                            <a href="https://student.taalomy.com" target="_blank" class="link-chip">Student Portal</a>
+                            <a href="https://lecturer.taalomy.com" target="_blank" class="link-chip">Lecturer Portal</a>
+                        </div>
+                    </div>
+
+                    <div class="taalomy-visual">
+                        <div class="macbook-mockup">
+                            <div class="macbook-screen">
+                                <div class="slider-container" id="taalomy-slider">
+                                    <img src="assets/Taalomy/english-professional.png" alt="Taalomy UI" class="slide active">
+                                    <img src="assets/Taalomy/english-timetable.png" alt="Taalomy UI" class="slide">
+                                    <img src="assets/Taalomy/english-wallet.png" alt="Taalomy UI" class="slide">
+                                    <img src="assets/Taalomy/english-intakes.png" alt="Taalomy UI" class="slide">
+                                </div>
+                            </div>
+                            <div class="macbook-base">
+                                <div class="macbook-touchpad"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="projects-secondary-grid">
+                    <div class="project-card card-forest">
+                        <div class="card-header">
+                            <span class="project-type">ECOSYSTEM</span>
+                            <h3>Tareekna</h3>
+                        </div>
+                        <p class="card-brief">Lead Frontend for a ride-sharing powerhouse. Real-time tracking and fare estimation for User, Driver, and Admin apps.</p>
+                        <div class="card-tech">React Native — Nest.js — PostgreSQL</div>
+                    </div>
+
+                    <div class="project-card card-earth">
+                        <div class="card-header">
+                            <span class="project-type">TELEMETRY</span>
+                            <h3>Mazraty</h3>
+                        </div>
+                        <p class="card-brief">Remote farm monitoring system providing real-time telemetry and push notifications for agricultural optimization.</p>
+                        <div class="card-tech">IoT Integration — React — Firebase</div>
+                    </div>
+
+                    <div class="project-card card-sky">
+                        <div class="card-header">
+                            <span class="project-type">CORPORATE</span>
+                            <h3>SFD Official</h3>
+                        </div>
+                        <p class="card-brief">High-performance corporate site featuring deep theme customization and an integrated conversational AI assistant.</p>
+                        <div class="card-tech">React — AI Ops — Tailwind</div>
+                    </div>
+
+                    <div class="project-card card-slate">
+                        <div class="card-header">
+                            <span class="project-type">INTELLIGENCE</span>
+                            <h3>Mini-Agent Suite</h3>
+                        </div>
+                        <p class="card-brief">40+ specialized agents developed in TypeScript for social content, blogs, and narrative-to-image automation.</p>
+                        <div class="card-tech">TypeScript — Llama 3.2 — GPT-4o</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Decorative Elements -->
+            <div class="deco dots"></div>
+            <div class="deco square sq-projects-1"></div>
+            <div class="deco square sq-projects-2"></div>
+        </section>
+
+        <!-- Section: Contact -->
+        <section id="contact" class="section">
+            <div class="content contact-layout">
+                <div class="section-hero">
+                    <p class="accent-text">OPPORTUNITIES &amp; COLLABS</p>
+                    <h1 class="main-title">LET'S<br>CONNECT</h1>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Contact Form -->
+                    <div class="contact-form-card card-forest">
+                        <form name="contact" method="POST" data-netlify="true" id="contact-form">
+                            <div class="form-group reveal-up">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required placeholder="Ahmad AL Zuhair">
+                            </div>
+                            <div class="form-group reveal-up">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required placeholder="hello@example.com">
+                            </div>
+                            <div class="form-group reveal-up">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" required placeholder="Let's build something exceptional..."></textarea>
+                            </div>
+                            <button type="submit" class="btn-send reveal-up">
+                                <span>SEND MESSAGE</span>
+                                <i class="icon-arrow">→</i>
+                            </button>
+                        </form>
+                        <div id="form-success" class="success-message">
+                            <i class="icon-check">✓</i>
+                            <p>Message Sent Successfully!</p>
+                        </div>
+                    </div>
+
+                    <!-- Social / Info Side -->
+                    <div class="contact-info-side">
+                        <div class="info-block reveal-up">
+                            <h3>Direct Reach</h3>
+                            <a href="mailto:ahmadyalzuhair@gmail.com" class="contact-link">ahmadyalzuhair@gmail.com</a>
+                        </div>
+                        
+                        <div class="social-hub">
+                            <h3 class="reveal-up">Connect &amp; Follow</h3>
+                            <div class="social-grid">
+                                <a href="https://linkedin.com/in/a-zuhair" target="_blank" class="social-chip card-sky reveal-up">
+                                    <span>LinkedIn</span>
+                                </a>
+                                <a href="https://github.com/AYZuhair" target="_blank" class="social-chip card-slate reveal-up">
+                                    <span>GitHub</span>
+                                </a>
+                                <a href="#" class="social-chip card-gold reveal-up">
+                                    <span>AI Assistant</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="location-stamp reveal-up">
+                            <p>RIYADH, KSA</p>
+                            <p class="time-stamp" id="local-time">00:00:00 GMT+3</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decorative Elements -->
+                <div class="deco dots"></div>
+                <div class="deco square sq-contact-1"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

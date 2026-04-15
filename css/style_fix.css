@@ -1,0 +1,56 @@
+
+/* Consolidated Theme Definitions */
+:root {
+    --font-main: 'Inter', -apple-system, sans-serif;
+    --font-accent: 'Permanent Marker', cursive;
+}
+
+:root, :root[data-theme='light'] {
+    --bg-color: #FFFFFF;
+    --text-color: #141C15;
+    --accent-primary: #1A4D2E;
+    --accent-secondary: #4F6F52;
+    --accent-light: #E8F3D6;
+    --accent-muted: #86A789;
+    --overlay-color: #1A4D2E;
+    --nav-bg: rgba(255, 255, 255, 0.85);
+    --nav-border: rgba(0, 0, 0, 0.1);
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --card-shadow: rgba(0,0,0,0.05);
+    --icon-color: #1A4D2E;
+    --dot-color: rgba(79, 110, 82, 0.08);
+
+    --clr-forest: #2D4F36;
+    --clr-earth: #8B4513;
+    --clr-sky: #4682B4;
+    --clr-gold: #B8860B;
+    --clr-slate: #2F4F4F;
+}
+
+:root[data-theme='dark'] {
+    --bg-color: #0A0F0B;
+    --text-color: #E8F3D6;
+    --accent-primary: #86A789;
+    --accent-secondary: #4F6F52;
+    --accent-light: #1A241D;
+    --accent-muted: #4F6F52;
+    --overlay-color: #1A241D;
+    --nav-bg: rgba(10, 15, 11, 0.85);
+    --nav-border: rgba(255, 255, 255, 0.1);
+    --card-bg: rgba(20, 28, 21, 0.9);
+    --card-shadow: rgba(0, 0, 0, 0.3);
+    
+    --clr-forest: #86A789;
+    --clr-earth: #D2B48C;
+    --clr-sky: #87CEEB;
+    --clr-gold: #FFD700;
+    --clr-slate: #708090;
+
+    --dot-color: rgba(232, 243, 214, 0.05);
+}
+
+body {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color);
+    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+}
