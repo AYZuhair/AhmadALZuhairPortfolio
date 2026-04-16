@@ -102,7 +102,7 @@
                 <span class="nav-label">Contact</span>
             </a>
             <div class="nav-separator"></div>
-            <a href="#" class="nav-item" aria-label="Download CV">
+            <a href="#" class="nav-item" id="cv-trigger" aria-label="Open Digital CV">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -469,6 +469,128 @@
             </div>
         </section>
     </main>
+
+    <!-- Digital CV Overlay -->
+    <div id="cv-overlay" class="cv-overlay">
+        <div class="cv-container">
+            <button class="cv-close" id="cv-close" aria-label="Close CV">&times;</button>
+            
+            <header class="cv-header reveal-cv">
+                <div class="header-main">
+                    <h1>Ahmad Yousif Zuhair</h1>
+                    <p class="cv-tagline">Lead Frontend Developer &amp; AI Ops Engineer</p>
+                </div>
+                <div class="header-contact">
+                    <a href="mailto:ahmadyalzuhair@gmail.com">ahmadyalzuhair@gmail.com</a>
+                    <div class="header-socials">
+                        <a href="https://linkedin.com/in/a-zuhair" target="_blank">LinkedIn</a>
+                        <a href="https://github.com/AYZuhair" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </header>
+
+            <div class="cv-content">
+                <!-- Column: Bio & Info -->
+                <div class="cv-column bio-col reveal-cv" style="transition-delay: 0.1s;">
+                    <section class="cv-section">
+                        <h3>Executive Summary</h3>
+                        <p>Dedicated and innovative developer with dual expertise in AI Operations Engineering and Frontend Development. Specializing in designing intuitive interfaces and developing tailored AI solutions for the Middle Eastern market.</p>
+                    </section>
+
+                    <section class="cv-section">
+                        <h3>Education</h3>
+                        <div class="edu-item">
+                            <h4>B.Eng in Computer Engineering</h4>
+                            <p>Asia Pacific University (APU) — 2025</p>
+                        </div>
+                        <div class="edu-item">
+                            <h4>Bachelor's Studies</h4>
+                            <p>De Montfort University (DMU), UK</p>
+                        </div>
+                    </section>
+
+                    <section class="cv-section">
+                        <h3>Philosophy</h3>
+                        <ul class="cv-list">
+                            <li>Product Thinking over pure coding</li>
+                            <li>Architecture with Typed Boundaries</li>
+                            <li>Composition over Inheritance</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <!-- Column: Experience -->
+                <div class="cv-column exp-col reveal-cv" style="transition-delay: 0.2s;">
+                    <section class="cv-section">
+                        <h3>Professional Journey</h3>
+                        
+                        <div class="cv-timeline">
+                            <div class="timeline-item">
+                                <div class="time-marker">2024 — Present</div>
+                                <div class="time-content">
+                                    <h4>Lead Frontend Developer | SFD</h4>
+                                    <p>Architected the Tareekna Ecosystem (User, Driver, Admin) and the Acadex institutional platform. Leveraged React Native, Expo, and WebSockets for real-time telemetry.</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="time-marker">2024 — 2025</div>
+                                <div class="time-content">
+                                    <h4>Junior AI Ops Engineer | Devan &amp; Co</h4>
+                                    <p>Developed a suite of 40+ specialized AI agents. Fine-tuned and deployed LLMs (Llama, Qwen) at scale for social and marketing automation.</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="time-marker">2022</div>
+                                <div class="time-content">
+                                    <h4>Technical Assistant | APU</h4>
+                                    <p>Managed IT infrastructure and resolved systems issues for university laboratories.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Column: Tech Center -->
+                <div class="cv-column skill-col reveal-cv" style="transition-delay: 0.3s;">
+                    <section class="cv-section">
+                        <h3>Technical Command</h3>
+                        
+                        <div class="skill-group">
+                            <h4>AI &amp; Machine Learning</h4>
+                            <div class="cv-tags">
+                                <span>Llama 3.2</span> <span>OpenAI</span> <span>RAG</span> <span>Fine-tuning</span> <span>LangChain</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-group">
+                            <h4>Frontend &amp; Mobile</h4>
+                            <div class="cv-tags">
+                                <span>React</span> <span>React Native</span> <span>TypeScript</span> <span>Three.js</span> <span>Figma</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-group">
+                            <h4>Backend &amp; Cloud</h4>
+                            <div class="cv-tags">
+                                <span>Node.js</span> <span>Python</span> <span>PostgreSQL</span> <span>WebSockets</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="cv-actions">
+                        <a href="Ahmad_Zuhair-CV-edit.pdf" download class="cv-download-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+                            </svg>
+                            Download PDF Version
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
 </body>

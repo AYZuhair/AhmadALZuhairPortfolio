@@ -295,4 +295,35 @@ document.addEventListener('DOMContentLoaded', () => {
     initClock();
 
 
+    // Digital CV Toggle Logic
+    const cvTrigger = document.getElementById('cv-trigger');
+    const cvOverlay = document.getElementById('cv-overlay');
+    const cvClose = document.getElementById('cv-close');
+
+    if (cvTrigger && cvOverlay && cvClose) {
+        cvTrigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            cvOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Lock main scroll
+        });
+
+        const closeCV = () => {
+            cvOverlay.classList.remove('active');
+            document.body.style.overflow = ''; // Restore main scroll
+        };
+
+        cvClose.addEventListener('click', closeCV);
+
+        // Close on background click
+        cvOverlay.addEventListener('click', (e) => {
+            if (e.target === cvOverlay) closeCV();
+        });
+
+        // Close on Esc key
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && cvOverlay.classList.contains('active')) {
+                closeCV();
+            }
+        });
+    }
 });
