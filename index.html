@@ -21,7 +21,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;family=Permanent+Marker&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Permanent+Marker&family=IBM+Plex+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Favicons -->
@@ -76,7 +76,7 @@
                     <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                     <polyline points="9 22 9 12 15 12 15 22" />
                 </svg>
-                <span class="nav-label">Home</span>
+                <span class="nav-label" data-i18n="nav-home">Home</span>
             </a>
             <a href="#stack" class="nav-item" data-section="stack" aria-label="Stack">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -85,7 +85,7 @@
                     <polyline points="2 17 12 22 22 17" />
                     <polyline points="2 12 12 17 22 12" />
                 </svg>
-                <span class="nav-label">Stack</span>
+                <span class="nav-label" data-i18n="nav-stack">Stack</span>
             </a>
             <a href="#projects" class="nav-item" data-section="projects" aria-label="Projects">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -93,7 +93,7 @@
                     <rect width="20" height="14" x="2" y="7" rx="2" ry="2" />
                     <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
                 </svg>
-                <span class="nav-label">Projects</span>
+                <span class="nav-label" data-i18n="nav-projects">Projects</span>
             </a>
             <a href="#contact" class="nav-item" data-section="contact" aria-label="Contact">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -101,7 +101,7 @@
                     <rect width="20" height="16" x="2" y="4" rx="2" />
                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                 </svg>
-                <span class="nav-label">Contact</span>
+                <span class="nav-label" data-i18n="nav-contact">Contact</span>
             </a>
             <div class="nav-separator"></div>
             <a href="#" class="nav-item" id="cv-trigger" aria-label="Open Digital CV">
@@ -115,6 +115,11 @@
                 </svg>
                 <span class="nav-label">CV</span>
             </a>
+            <div class="nav-separator"></div>
+            <button class="nav-item" id="lang-toggle" aria-label="Switch Language">
+                <span class="lang-code">AR</span>
+                <span class="nav-label" data-i18n="nav-lang">العربية</span>
+            </button>
             <div class="nav-separator"></div>
             <button class="nav-item" id="theme-toggle" aria-label="Toggle Theme">
                 <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -149,15 +154,15 @@
         <section id="home" class="section active">
             <div class="content hero">
                 <div class="hero-text">
-                    <p class="accent-text">THIS IS</p>
-                    <h1 class="main-title">AHMAD<br>AL ZUHAIR</h1>
-                    <p class="accent-text">LEAD FRONTEND &amp; AI OPS ENGINEER</p>
+                    <p class="accent-text" data-i18n="hero-intro">THIS IS</p>
+                    <h1 class="main-title" data-i18n="hero-name">AHMAD<br>AL ZUHAIR</h1>
+                    <p class="accent-text" data-i18n="hero-role">LEAD FRONTEND &amp; AI OPS ENGINEER</p>
 
                     <div class="status-container reveal-up">
                         <span class="status-badge">
-                            <span class="dot"></span> Available
+                            <span class="dot"></span> <span data-i18n="status-available">Available</span>
                         </span>
-                        <span class="location-badge">UTC+03:00</span>
+                        <span class="location-badge" data-i18n="utc">UTC+03:00</span>
                     </div>
                 </div>
 
@@ -171,7 +176,7 @@
             </div>
 
             <div class="scroll-hint reveal-up">
-                <button id="next-section-btn" class="btn-scroll">
+                <button id="next-section-btn" class="btn-scroll" data-i18n="btn-projects">
                     Projects
                 </button>
             </div>
@@ -185,7 +190,7 @@
         <!-- Section: Stack -->
         <section id="stack" class="section">
             <div class="content">
-                <h2 class="section-heading">Tech Stack</h2>
+                <h2 class="section-heading" data-i18n="heading-stack">Tech Stack</h2>
                 <div class="stack-grid">
                     <!-- Web Core -->
                     <div class="stack-item reveal-up">
@@ -311,30 +316,30 @@
         <section id="projects" class="section">
             <div class="content">
                 <div class="section-hero">
-                    <p class="accent-text">CHALLENGE &amp; IMPACT</p>
-                    <h1 class="main-title">FEATURED ENGINEERING</h1>
+                    <p class="accent-text" data-i18n="projects-intro">CHALLENGE &amp; IMPACT</p>
+                    <h1 class="main-title" data-i18n="projects-title">FEATURED ENGINEERING</h1>
                 </div>
                 
                 <div class="projects-grid-wrapper">
                     <!-- Hero Project: Taalomy -->
                     <div class="taalomy-showcase card-gold">
                     <div class="taalomy-info">
-                        <div class="project-tag">FEATURED WORK</div>
-                        <h3>Taalomy</h3>
-                        <p class="role-tag">Lead Full-Stack Engineer</p>
-                        <p class="project-brief">
+                        <div class="project-tag" data-i18n="taalomy-tag">FEATURED WORK</div>
+                        <h3 data-i18n="taalomy-name">Taalomy</h3>
+                        <p class="role-tag" data-i18n="taalomy-role">Lead Full-Stack Engineer</p>
+                        <p class="project-brief" data-i18n="taalomy-brief">
                             A comprehensive EdTech platform connecting institutions via a Dual-App Mobile Ecosystem. 
                             Redefining academic engagement through real-time data sync and institutional optimization.
                         </p>
                         <ul class="project-bullets">
-                            <li>Dual-app ecosystem for Students and Lecturers built with React Native (Expo).</li>
-                            <li>Real-time attendance tracking via WebSockets (Django Channels).</li>
-                            <li>Integrated timetables and secure academic record management.</li>
+                            <li data-i18n="taalomy-b1">Dual-app ecosystem for Students and Lecturers built with React Native (Expo).</li>
+                            <li data-i18n="taalomy-b2">Real-time attendance tracking via WebSockets (Django Channels).</li>
+                            <li data-i18n="taalomy-b3">Integrated timetables and secure academic record management.</li>
                         </ul>
                         <div class="project-links">
-                            <a href="https://taalomy.com" target="_blank" class="link-chip">Main Site</a>
-                            <a href="https://student.taalomy.com" target="_blank" class="link-chip">Student Portal</a>
-                            <a href="https://lecturer.taalomy.com" target="_blank" class="link-chip">Lecturer Portal</a>
+                            <a href="https://taalomy.com" target="_blank" class="link-chip" data-i18n="link-site">Main Site</a>
+                            <a href="https://student.taalomy.com" target="_blank" class="link-chip" data-i18n="link-student">Student Portal</a>
+                            <a href="https://lecturer.taalomy.com" target="_blank" class="link-chip" data-i18n="link-lecturer">Lecturer Portal</a>
                         </div>
                     </div>
 
@@ -359,37 +364,37 @@
                 <div class="projects-secondary-grid">
                     <div class="project-card card-forest">
                         <div class="card-header">
-                            <span class="project-type">ECOSYSTEM</span>
+                            <span class="project-type" data-i18n="p-eco">ECOSYSTEM</span>
                             <h3>Tareekna</h3>
                         </div>
-                        <p class="card-brief">Lead Frontend for a ride-sharing powerhouse. Real-time tracking and fare estimation for User, Driver, and Admin apps.</p>
+                        <p class="card-brief" data-i18n="p-tareekna">Lead Frontend for a ride-sharing powerhouse. Real-time tracking and fare estimation for User, Driver, and Admin apps.</p>
                         <div class="card-tech">React Native — Nest.js — PostgreSQL</div>
                     </div>
 
                     <div class="project-card card-earth">
                         <div class="card-header">
-                            <span class="project-type">TELEMETRY</span>
+                            <span class="project-type" data-i18n="p-tele">TELEMETRY</span>
                             <h3>Mazraty</h3>
                         </div>
-                        <p class="card-brief">Remote farm monitoring system providing real-time telemetry and push notifications for agricultural optimization.</p>
+                        <p class="card-brief" data-i18n="p-mazraty">Remote farm monitoring system providing real-time telemetry and push notifications for agricultural optimization.</p>
                         <div class="card-tech">IoT Integration — React — Firebase</div>
                     </div>
 
                     <div class="project-card card-sky">
                         <div class="card-header">
-                            <span class="project-type">CORPORATE</span>
+                            <span class="project-type" data-i18n="p-corp">CORPORATE</span>
                             <h3>SFD Official</h3>
                         </div>
-                        <p class="card-brief">High-performance corporate site featuring deep theme customization and an integrated conversational AI assistant.</p>
+                        <p class="card-brief" data-i18n="p-sfd">High-performance corporate site featuring deep theme customization and an integrated conversational AI assistant.</p>
                         <div class="card-tech">React — AI Ops — Tailwind</div>
                     </div>
 
                     <div class="project-card card-slate">
                         <div class="card-header">
-                            <span class="project-type">INTELLIGENCE</span>
+                            <span class="project-type" data-i18n="p-intel">INTELLIGENCE</span>
                             <h3>Mini-Agent Suite</h3>
                         </div>
-                        <p class="card-brief">40+ specialized agents developed in TypeScript for social content, blogs, and narrative-to-image automation.</p>
+                        <p class="card-brief" data-i18n="p-agents">40+ specialized agents developed in TypeScript for social content, blogs, and narrative-to-image automation.</p>
                         <div class="card-tech">TypeScript — Llama 3.2 — GPT-4o</div>
                     </div>
                 </div>
@@ -405,8 +410,8 @@
         <section id="contact" class="section">
             <div class="content contact-layout">
                 <div class="section-hero">
-                    <p class="accent-text">OPPORTUNITIES &amp; COLLABS</p>
-                    <h1 class="main-title">LET'S<br>CONNECT</h1>
+                    <p class="accent-text" data-i18n="contact-intro">OPPORTUNITIES &amp; COLLABS</p>
+                    <h1 class="main-title" data-i18n="contact-title">LET'S<br>CONNECT</h1>
                 </div>
 
                 <div class="contact-grid">
@@ -415,51 +420,51 @@
                         <div class="narrative-card card-forest reveal-up">
                             <div class="card-header">
                                 <span class="project-type">01 — IDENTITY</span>
-                                <h3>About Me</h3>
+                                <h3 data-i18n="c-about-h">About Me</h3>
                             </div>
-                            <p class="card-brief">Lead Frontend Developer &amp; AI Ops Engineer at SFD. I specialize in crafting intuitive interfaces and architecting AI solutions that bridge the gap between complex technology and human experience.</p>
+                            <p class="card-brief" data-i18n="c-about-p">Lead Frontend Developer &amp; AI Ops Engineer at SFD. I specialize in crafting intuitive interfaces and architecting AI solutions that bridge the gap between complex technology and human experience.</p>
                         </div>
 
                         <div class="narrative-card card-earth reveal-up" style="transition-delay: 0.1s;">
                             <div class="card-header">
                                 <span class="project-type">02 — STRATEGY</span>
-                                <h3>Vision</h3>
+                                <h3 data-i18n="c-vision-h">Vision</h3>
                             </div>
-                            <p class="card-brief">To transform cutting-edge AI into seamless, accessible daily experiences that empower users and redefine digital interaction through advanced UI/UX and intelligent automation.</p>
+                            <p class="card-brief" data-i18n="c-vision-p">To transform cutting-edge AI into seamless, accessible daily experiences that empower users and redefine digital interaction through advanced UI/UX and intelligent automation.</p>
                         </div>
 
                         <div class="narrative-card card-sky reveal-up" style="transition-delay: 0.2s;">
                             <div class="card-header">
                                 <span class="project-type">03 — PURPOSE</span>
-                                <h3>Mission</h3>
+                                <h3 data-i18n="c-mission-h">Mission</h3>
                             </div>
-                            <p class="card-brief">Engineering robust, scalable, and high-performance systems with a relentless focus on engineering rigor, design excellence, and real-world impact in the global and Saudi tech sectors.</p>
+                            <p class="card-brief" data-i18n="c-mission-p">Engineering robust, scalable, and high-performance systems with a relentless focus on engineering rigor, design excellence, and real-world impact in the global and Saudi tech sectors.</p>
                         </div>
                     </div>
                     <!-- Social / Info Side -->
                     <div class="contact-info-side">
                         <div class="info-block reveal-up">
-                            <h3>Direct Reach</h3>
+                            <h3 data-i18n="contact-direct">Direct Reach</h3>
                             <a href="mailto:ahmadyalzuhair@gmail.com" class="contact-link">ahmadyalzuhair@gmail.com</a>
                         </div>
                         
                         <div class="social-hub">
-                            <h3 class="reveal-up">Connect &amp; Follow</h3>
+                            <h3 class="reveal-up" data-i18n="contact-follow">Connect &amp; Follow</h3>
                             <div class="social-grid">
                                 <a href="https://linkedin.com/in/a-zuhair" target="_blank" class="social-chip card-sky reveal-up">
-                                    <span>LinkedIn</span>
+                                    <span data-i18n="link-linkedin">LinkedIn</span>
                                 </a>
                                 <a href="https://github.com/AYZuhair" target="_blank" class="social-chip card-slate reveal-up">
-                                    <span>GitHub</span>
+                                    <span data-i18n="link-github">GitHub</span>
                                 </a>
                                 <a href="#" class="social-chip card-gold reveal-up">
-                                    <span>AI Assistant</span>
+                                    <span data-i18n="link-ai">AI Assistant</span>
                                 </a>
                             </div>
                         </div>
 
                         <div class="location-stamp reveal-up">
-                            <p>RIYADH, KSA</p>
+                            <p data-i18n="location">RIYADH, KSA</p>
                             <p class="time-stamp" id="local-time">00:00:00 GMT+3</p>
                         </div>
                     </div>
@@ -495,28 +500,28 @@
                 <!-- Column: Bio & Info -->
                 <div class="cv-column bio-col reveal-cv" style="transition-delay: 0.1s;">
                     <section class="cv-section">
-                        <h3>Executive Summary</h3>
-                        <p>Dedicated and innovative developer with dual expertise in AI Operations Engineering and Frontend Development. Specializing in designing intuitive interfaces and developing tailored AI solutions for the Middle Eastern market.</p>
+                        <h3 data-i18n="cv-summary-title">Executive Summary</h3>
+                        <p data-i18n="cv-summary-text">Dedicated and innovative developer with dual expertise in AI Operations Engineering and Frontend Development. Specializing in designing intuitive interfaces and developing tailored AI solutions for the Middle Eastern market.</p>
                     </section>
 
                     <section class="cv-section">
-                        <h3>Education</h3>
+                        <h3 data-i18n="cv-edu-title">Education</h3>
                         <div class="edu-item">
-                            <h4>B.Eng in Computer Engineering</h4>
-                            <p>Asia Pacific University (APU) — 2025</p>
+                            <h4 data-i18n="cv-edu-1-h">B.Eng in Computer Engineering</h4>
+                            <p data-i18n="cv-edu-1-p">Asia Pacific University (APU) — 2025</p>
                         </div>
                         <div class="edu-item">
-                            <h4>Bachelor's Studies</h4>
-                            <p>De Montfort University (DMU), UK</p>
+                            <h4 data-i18n="cv-edu-2-h">Bachelor's Studies</h4>
+                            <p data-i18n="cv-edu-2-p">De Montfort University (DMU), UK</p>
                         </div>
                     </section>
 
                     <section class="cv-section">
-                        <h3>Philosophy</h3>
+                        <h3 data-i18n="cv-philo-title">Philosophy</h3>
                         <ul class="cv-list">
-                            <li>Product Thinking over pure coding</li>
-                            <li>Architecture with Typed Boundaries</li>
-                            <li>Composition over Inheritance</li>
+                            <li data-i18n="cv-p1">Product Thinking over pure coding</li>
+                            <li data-i18n="cv-p2">Architecture with Typed Boundaries</li>
+                            <li data-i18n="cv-p3">Composition over Inheritance</li>
                         </ul>
                     </section>
                 </div>
@@ -524,30 +529,30 @@
                 <!-- Column: Experience -->
                 <div class="cv-column exp-col reveal-cv" style="transition-delay: 0.2s;">
                     <section class="cv-section">
-                        <h3>Professional Journey</h3>
+                        <h3 data-i18n="cv-journey-title">Professional Journey</h3>
                         
                         <div class="cv-timeline">
                             <div class="timeline-item">
                                 <div class="time-marker">2024 — Present</div>
                                 <div class="time-content">
-                                    <h4>Lead Frontend Developer | SFD</h4>
-                                    <p>Architected the Tareekna Ecosystem (User, Driver, Admin) and the Acadex institutional platform. Leveraged React Native, Expo, and WebSockets for real-time telemetry.</p>
+                                    <h4 data-i18n="cv-exp1-h">Lead Frontend Developer | SFD</h4>
+                                    <p data-i18n="cv-exp1-p">Architected the Tareekna Ecosystem (User, Driver, Admin) and the Acadex institutional platform. Leveraged React Native, Expo, and WebSockets for real-time telemetry.</p>
                                 </div>
                             </div>
 
                             <div class="timeline-item">
                                 <div class="time-marker">2024 — 2025</div>
                                 <div class="time-content">
-                                    <h4>Junior AI Ops Engineer | Devan &amp; Co</h4>
-                                    <p>Developed a suite of 40+ specialized AI agents. Fine-tuned and deployed LLMs (Llama, Qwen) at scale for social and marketing automation.</p>
+                                    <h4 data-i18n="cv-exp2-h">Junior AI Ops Engineer | Devan &amp; Co</h4>
+                                    <p data-i18n="cv-exp2-p">Developed a suite of 40+ specialized AI agents. Fine-tuned and deployed LLMs (Llama, Qwen) at scale for social and marketing automation.</p>
                                 </div>
                             </div>
 
                             <div class="timeline-item">
                                 <div class="time-marker">2022</div>
                                 <div class="time-content">
-                                    <h4>Technical Assistant | APU</h4>
-                                    <p>Managed IT infrastructure and resolved systems issues for university laboratories.</p>
+                                    <h4 data-i18n="cv-exp3-h">Technical Assistant | APU</h4>
+                                    <p data-i18n="cv-exp3-p">Managed IT infrastructure and resolved systems issues for university laboratories.</p>
                                 </div>
                             </div>
                         </div>
@@ -557,7 +562,7 @@
                 <!-- Column: Tech Center -->
                 <div class="cv-column skill-col reveal-cv" style="transition-delay: 0.3s;">
                     <section class="cv-section">
-                        <h3>Technical Command</h3>
+                        <h3 data-i18n="cv-tech-title">Technical Command</h3>
                         
                         <div class="skill-group">
                             <h4>AI &amp; Machine Learning</h4>
@@ -582,7 +587,7 @@
                     </section>
 
                     <div class="cv-actions">
-                        <a href="Ahmad_Zuhair-CV-edit.pdf" download class="cv-download-btn">
+                        <a href="Ahmad_Zuhair-CV-edit.pdf" download class="cv-download-btn" data-i18n="cv-download">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
                             </svg>

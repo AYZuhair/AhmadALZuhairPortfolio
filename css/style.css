@@ -16,6 +16,7 @@ html {
 
     --font-main: 'Inter', -apple-system, sans-serif;
     --font-accent: 'Permanent Marker', cursive;
+    --font-arabic: 'IBM Plex Sans Arabic', sans-serif;
 }
 
 html[data-theme='dark'] {
@@ -44,6 +45,11 @@ html[data-theme='dark'] {
     --accent-muted: #6B8E23;
     --icon-color: #E8F3D6;
     --dot-color: rgba(134, 167, 137, 0.05);
+}
+
+html[data-theme='dark'] .btn-scroll {
+    background: white;
+    color: black;
 }
 
 * {
@@ -1387,6 +1393,112 @@ html[data-theme='light'] .narrative-card {
 
 html[data-theme='light'] .narrative-card:hover {
     box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+/* RTL & Arabic Support */
+html[lang="ar"] {
+    font-family: var(--font-arabic);
+}
+
+html[lang="ar"] .main-title,
+html[lang="ar"] .section-heading,
+html[lang="ar"] .cv-header h1 {
+    font-weight: 700;
+}
+
+html[dir="rtl"] .hero-text {
+    text-align: right;
+}
+
+html[dir="rtl"] .status-badge {
+    padding-left: 20px;
+    padding-right: 15px;
+}
+
+html[dir="rtl"] .status-badge .dot {
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+html[dir="rtl"] .project-bullets {
+    padding-right: 0;
+}
+
+html[dir="rtl"] .project-bullets li {
+    padding-left: 0;
+    padding-right: 35px;
+}
+
+html[dir="rtl"] .project-bullets li::before {
+    left: auto;
+    right: 0;
+}
+
+html[dir="rtl"] .timeline-item {
+    border-left: none;
+    border-right: 1px dashed var(--dot-color);
+    padding-left: 0;
+    padding-right: 30px;
+}
+
+html[dir="rtl"] .timeline-item::before {
+    left: auto;
+    right: -35px;
+}
+
+html[dir="rtl"] .cv-timeline {
+    border-left: none;
+    border-right: 1px dashed var(--dot-color);
+    padding-left: 0;
+    padding-right: 30px;
+}
+
+html[dir="rtl"] .cv-timeline .timeline-item::before {
+    left: auto;
+    right: -35px;
+}
+
+html[dir="rtl"] .cv-close {
+    right: auto;
+    left: 30px;
+}
+
+html[dir="rtl"] .header-contact {
+    text-align: left;
+}
+
+html[dir="rtl"] .header-socials {
+    justify-content: flex-start;
+}
+
+html[dir="rtl"] .cv-list li {
+    padding-left: 0;
+    padding-right: 20px;
+}
+
+html[dir="rtl"] .cv-list li::before {
+    left: auto;
+    right: 0;
+    transform: scaleX(-1);
+}
+
+html[dir="rtl"] .nav-item {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .nav-label {
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+html[dir="rtl"] .coord.v-coord {
+    left: auto;
+    right: -10px;
+}
+
+html[dir="rtl"] .coord.h-coord {
+    right: auto;
+    left: 15px;
 }
 
 /* Digital CV Overlay */

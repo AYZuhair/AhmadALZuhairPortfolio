@@ -8,15 +8,85 @@ document.addEventListener('DOMContentLoaded', () => {
     const navItems = document.querySelectorAll('.nav-item');
     const allSections = document.querySelectorAll('.section');
 
+    const translations = {
+        'en': {
+            'nav-home': 'Home', 'nav-stack': 'Stack', 'nav-projects': 'Projects', 'nav-contact': 'Contact', 'nav-lang': 'العربية',
+            'hero-intro': 'THIS IS', 'hero-name': 'AHMAD<br>AL ZUHAIR', 'hero-role': 'LEAD FRONTEND & AI OPS ENGINEER',
+            'status-available': 'Available', 'btn-projects': 'Projects', 'heading-stack': 'Tech Stack',
+            'projects-intro': 'CHALLENGE & IMPACT', 'projects-title': 'FEATURED ENGINEERING',
+            'taalomy-tag': 'FEATURED WORK', 'taalomy-name': 'Taalomy', 'taalomy-role': 'Lead Full-Stack Engineer',
+            'taalomy-brief': 'A comprehensive EdTech platform connecting institutions via a Dual-App Mobile Ecosystem. Redefining academic engagement through real-time data sync and institutional optimization.',
+            'taalomy-b1': 'Dual-app ecosystem for Students and Lecturers built with React Native (Expo).',
+            'taalomy-b2': 'Real-time attendance tracking via WebSockets (Django Channels).',
+            'taalomy-b3': 'Integrated timetables and secure academic record management.',
+            'link-site': 'Main Site', 'link-student': 'Student Portal', 'link-lecturer': 'Lecturer Portal',
+            'p-eco': 'ECOSYSTEM', 'p-tareekna': 'Lead Frontend for a ride-sharing powerhouse. Real-time tracking and fare estimation for User, Driver, and Admin apps.',
+            'p-tele': 'TELEMETRY', 'p-mazraty': 'Remote farm monitoring system providing real-time telemetry and push notifications for agricultural optimization.',
+            'p-corp': 'CORPORATE', 'p-sfd': 'High-performance corporate site featuring deep theme customization and an integrated conversational AI assistant.',
+            'p-intel': 'INTELLIGENCE', 'p-agents': '40+ specialized agents developed in TypeScript for social content, blogs, and narrative-to-image automation.',
+            'contact-intro': 'OPPORTUNITIES & COLLABS', 'contact-title': 'LET\'S<br>CONNECT',
+            'c-about-h': 'About Me', 'c-about-p': 'Lead Frontend Developer & AI Ops Engineer at SFD. I specialize in crafting intuitive interfaces and architecting AI solutions that bridge the gap between complex technology and human experience.',
+            'c-vision-h': 'Vision', 'c-vision-p': 'To transform cutting-edge AI into seamless, accessible daily experiences that empower users and redefine digital interaction through advanced UI/UX and intelligent automation.',
+            'c-mission-h': 'Mission', 'c-mission-p': 'Engineering robust, scalable, and high-performance systems with a relentless focus on engineering rigor, design excellence, and real-world impact in the global and Saudi tech sectors.',
+            'contact-direct': 'Direct Reach', 'contact-follow': 'Connect & Follow', 'location': 'RIYADH, KSA',
+            'link-linkedin': 'LinkedIn', 'link-github': 'GitHub', 'link-ai': 'AI Assistant',
+            'cv-summary-title': 'Executive Summary', 'cv-summary-text': 'Dedicated and innovative developer with dual expertise in AI Operations Engineering and Frontend Development. Specializing in designing intuitive interfaces and developing tailored AI solutions for the Middle Eastern market.',
+            'cv-edu-title': 'Education', 'cv-edu-1-h': 'B.Eng in Computer Engineering', 'cv-edu-1-p': 'Asia Pacific University (APU) — 2025', 'cv-edu-2-h': 'Bachelor\'s Studies', 'cv-edu-2-p': 'De Montfort University (DMU), UK',
+            'cv-philo-title': 'Philosophy', 'cv-p1': 'Product Thinking over pure coding', 'cv-p2': 'Architecture with Typed Boundaries', 'cv-p3': 'Composition over Inheritance',
+            'cv-journey-title': 'Professional Journey', 'cv-exp1-h': 'Lead Frontend Developer | SFD', 'cv-exp1-p': 'Architected the Tareekna Ecosystem (User, Driver, Admin) and the Acadex institutional platform. Leveraged React Native, Expo, and WebSockets for real-time telemetry.',
+            'cv-exp2-h': 'Junior AI Ops Engineer | Devan & Co', 'cv-exp2-p': 'Developed a suite of 40+ specialized AI agents. Fine-tuned and deployed LLMs (Llama, Qwen) at scale for social and marketing automation.',
+            'cv-exp3-h': 'Technical Assistant | APU', 'cv-exp3-p': 'Managed IT infrastructure and resolved systems issues for university laboratories.',
+            'cv-tech-title': 'Technical Command', 'cv-download': 'Download PDF Version',
+            'utc': 'UTC+03:00'
+        },
+        'ar': {
+            'nav-home': 'الرئيسية', 'nav-stack': 'التقنيات', 'nav-projects': 'المشاريع', 'nav-contact': 'اتصل بي', 'nav-lang': 'English',
+            'hero-intro': 'أهلاً بك، أنا', 'hero-name': 'أحمد<br>الزهير', 'hero-role': 'رئيس مطوري الواجهات الأمامية ومهندس ذكاء اصطناعي',
+            'status-available': 'متاح للعمل', 'btn-projects': 'المشاريع', 'heading-stack': 'القدرات التقنية',
+            'projects-intro': 'التحدي والأثر', 'projects-title': 'الهندسة المتميزة',
+            'taalomy-tag': 'عمل مختار', 'taalomy-name': 'تعلمي', 'taalomy-role': 'رئيس مهندسي التطوير (Full-Stack)',
+            'taalomy-brief': 'منصة تعليمية متكاملة تربط المؤسسات عبر نظام تطبيقات الهاتف المزدوج. إعادة تعريف التفاعل الأكاديمي من خلال مزامنة البيانات في الوقت الفعلي وتحسين المؤسسات.',
+            'taalomy-b1': 'نظام تطبيقات مزدوج للطلاب والمحاضرين بني باستخدام React Native.',
+            'taalomy-b2': 'تتبع الحضور اللحظي عبر WebSockets.',
+            'taalomy-b3': 'جداول زمنية مدمجة وإدارة سجلات آمنة.',
+            'link-site': 'الموقع الرئيسي', 'link-student': 'بوابة الطالب', 'link-lecturer': 'بوابة المحاضر',
+            'p-eco': 'نظام بيئي', 'p-tareekna': 'رئيس مطوري الواجهات لمنصة Tareekna. تتبع في الوقت الفعلي وتقدير الأجرة لتطبيقات المستخدم والسائق والمسؤول.',
+            'p-tele': 'القياس عن بُعد', 'p-mazraty': 'نظام مراقبة المزارع عن بُعد يوفر بيانات القياس في الوقت الفعلي وإشعارات لتحسين الزراعة.',
+            'p-corp': 'مؤسسي', 'p-sfd': 'موقع مؤسسي عالي الأداء يتميز بتخصيص عميق للثيم ومساعد ذكاء اصطناعي محادث مدمج.',
+            'p-intel': 'ذكاء', 'p-agents': 'أكثر من 40 وكيلاً متخصصاً تم تطويرهم بلغة TypeScript للمحتوى الاجتماعي والمدونات والأتمتة.',
+            'contact-intro': 'الفرص والتعاون', 'contact-title': 'لنتواصل<br>',
+            'c-about-h': 'من أنا', 'c-about-p': 'رئيس مطوري الواجهة الأمامية ومهندس عمليات الذكاء الاصطناعي في SFD. أتخصص في صياغة واجهات بديهية وبناء حلول ذكاء اصطناعي تربط بين التكنولوجيا المعقدة والتجربة البشرية.',
+            'c-vision-h': 'الرؤية', 'c-vision-p': 'تحويل الذكاء الاصطناعي المتطور إلى تجارب يومية سلسة ومتاحة تمكن المستخدمين وتعيد تعريف التفاعل الرقمي من خلال واجهة مستخدم متقدمة وأتمتة ذكية.',
+            'c-mission-h': 'المهمة', 'c-mission-p': 'هندسة وأنظمة قوية وقابلة للتطوير وعالية الأداء مع تركيز لا يلين على الصرامة الهندسية وتميز التصميم والأثر الحقيقي في القطاعات التقنية العالمية والسعودية.',
+            'contact-direct': 'التواصل المباشر', 'contact-follow': 'تابعني وتواصل معي', 'location': 'الرياض، المملكة العربية السعودية',
+            'link-linkedin': 'لينكد إن', 'link-github': 'جيت هاب', 'link-ai': 'مساعد الذكاء الاصطناعي',
+            'cv-summary-title': 'الملخص التنفيذي', 'cv-summary-text': 'مطور مبتكر متخصص مع خبرة مزدوجة في هندسة عمليات الذكاء الاصطناعي وتطوير الواجهات الأمامية. متخصص في تصميم واجهات بديهية وتطوير حلول ذكاء اصطناعي مخصصة للسوق الشرق أوسطي.',
+            'cv-edu-title': 'التعليم', 'cv-edu-1-h': 'بكالوريوس هندسة الحاسوب', 'cv-edu-1-p': 'جامعة آسيا والمحيط الهادئ (APU) - 2025', 'cv-edu-2-h': 'دراسات البكالوريوس', 'cv-edu-2-p': 'جامعة دي مونتفورت (DMU)، المملكة المتحدة',
+            'cv-philo-title': 'الفلسفة الهندسية', 'cv-p1': 'التفكير في المنتج قبل الكود', 'cv-p2': 'بنية برمجية بحدود واضحة النوع', 'cv-p3': 'التركيب بدلاً من الوراثة البرمجية',
+            'cv-journey-title': 'الرحلة المهنية', 'cv-exp1-h': 'رئيس مطوري الواجهة الأمامية | SFD', 'cv-exp1-p': 'هندسة نظام Tareekna البيئي وبوابة Acadex المؤسسية. استخدام React Native و WebSockets للقياس عن بُعد في الوقت الفعلي.',
+            'cv-exp2-h': 'مهندس عمليات ذكاء اصطناعي | Devan & Co', 'cv-exp2-p': 'تطوير مجموعة من 40+ وكيلاً ذكياً. ضبط ونشر نماذج اللغات الكبيرة (Llama, Qwen) على نطاق واسع.',
+            'cv-exp3-h': 'مساعد تقني | جامعة APU', 'cv-exp3-p': 'إدارة البنية التحتية لتكنولوجيا المعلومات وحل مشكلات الأنظمة للمختبرات الجامعية.',
+            'cv-tech-title': 'القيادة التقنية', 'cv-download': 'تحميل نسخة PDF',
+            'utc': 'التوقيت العالمي +٠٣:٠٠'
+        }
+    };
+
     // Utility: Split text into characters (Robust version for symbols & entities)
     const splitTextIntoChars = () => {
         const targets = document.querySelectorAll('.main-title, .accent-text, .section-heading');
         targets.forEach(target => {
-            // First, decode any existing content to get clean text
+            // First, get clean content
             const decoder = document.createElement('div');
             decoder.innerHTML = target.innerHTML;
             const nodes = Array.from(decoder.childNodes);
-            
+
+            // Skip character splitting for Arabic to keep it legible (cursive)
+            if (document.documentElement.lang === 'ar') {
+                target.innerHTML = decoder.innerHTML;
+                target.style.opacity = '1';
+                return;
+            }
+
             target.innerHTML = '';
             target.style.opacity = '1';
 
@@ -73,7 +143,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         isTransitioning = true;
         const nextSectionName = sections[index];
-        transitionTitle.textContent = nextSectionName;
+        const currentLang = document.documentElement.lang || 'en';
+        const transKey = `nav-${nextSectionName}`;
+
+        transitionTitle.textContent = (translations[currentLang] && translations[currentLang][transKey])
+            ? translations[currentLang][transKey]
+            : nextSectionName.toUpperCase();
 
         // Start overlay animation
         overlay.classList.add('active');
@@ -88,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Activate next
             currentSectionIndex = index;
             allSections[currentSectionIndex].classList.add('active');
-            
+
             // Check for specific nav item to activate (avoiding non-section items like CV)
             const targetNav = document.querySelector(`.nav-item[data-section="${nextSectionName}"]`);
             if (targetNav) targetNav.classList.add('active');
@@ -96,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Slide overlay out
             setTimeout(() => {
                 overlay.classList.remove('active');
-                
+
                 // Trigger character animation after overlay is gone
                 setTimeout(() => {
                     allSections[currentSectionIndex].classList.add('animate');
@@ -125,8 +200,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const updateFavicon = (theme) => {
         const favicon = document.getElementById('favicon');
         if (favicon) {
-            favicon.href = theme === 'dark' 
-                ? 'assets/logos/darkmodelogotransparent.png' 
+            favicon.href = theme === 'dark'
+                ? 'assets/logos/darkmodelogotransparent.png'
                 : 'assets/logos/whitemodelogotransparent.png';
         }
     };
@@ -143,24 +218,24 @@ document.addEventListener('DOMContentLoaded', () => {
             const rect = themeToggle.getBoundingClientRect();
             const x = rect.left + rect.width / 2;
             const y = rect.top + rect.height / 2;
-            
+
             themeWipe.style.transition = 'none';
             themeWipe.style.setProperty('--wipe-x', `${x}px`);
             themeWipe.style.setProperty('--wipe-y', `${y}px`);
 
             const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
             const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
+
             const targetBg = targetTheme === 'dark' ? '#0A0F0B' : '#FFFFFF';
             themeWipe.style.backgroundColor = targetBg;
             themeWipe.style.display = 'block'; // Ensure it's not display:none initially
-            
+
             // Trigger reflow to ensure display change applies before transition
             void themeWipe.offsetWidth;
             themeWipe.style.transition = '';
-            
+
             themeWipe.classList.add('active');
-            
+
             // Instantly apply the theme change so the background doesn't transition late
             document.documentElement.setAttribute('data-theme', targetTheme);
             document.body.setAttribute('data-theme', targetTheme);
@@ -170,10 +245,10 @@ document.addEventListener('DOMContentLoaded', () => {
             // Update Meta Theme Color for Edge-to-Edge
             const metaTheme = document.getElementById('meta-theme-color');
             if (metaTheme) metaTheme.setAttribute('content', targetBg);
-            
+
             setTimeout(() => {
                 themeWipe.classList.remove('active');
-                
+
                 // Cleanup inline styles completely after transition
                 setTimeout(() => {
                     themeWipe.style.backgroundColor = '';
@@ -226,7 +301,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('touchend', (e) => {
         const now = Date.now();
         if (now - lastScrollTime < scrollCooldown || isTransitioning) return;
-        
+
         const touchEndY = e.changedTouches[0].clientY;
         const deltaY = touchStartY - touchEndY;
 
@@ -263,6 +338,12 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     document.head.appendChild(style);
 
+    // Global main-content transition
+    const mainContent = document.getElementById('main-content');
+    if (mainContent) {
+        mainContent.style.transition = 'opacity 0.3s ease';
+    }
+
     // Taalomy Slider Logic
     const initTaalomySlider = () => {
         const slides = document.querySelectorAll('#taalomy-slider .slide');
@@ -281,23 +362,78 @@ document.addEventListener('DOMContentLoaded', () => {
     const initClock = () => {
         const timeElement = document.getElementById('local-time');
         if (!timeElement) return;
-        
+
         const updateClock = () => {
             const now = new Date();
-            const timeStr = now.toLocaleTimeString('en-GB', {
-                timeZone: 'Asia/Riyadh',
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit',
-                hour12: false
-            });
-            timeElement.textContent = `${timeStr} GMT+3`;
+            const currentLang = document.documentElement.lang || 'en';
+            const suffix = currentLang === 'ar' ? ' ت.غ+٣' : ' GMT+3';
+            timeElement.textContent = `${timeStr}${suffix}`;
         };
         updateClock();
         setInterval(updateClock, 1000);
     };
     initClock();
 
+
+    // Language Switching Logic
+    const langToggle = document.getElementById('lang-toggle');
+    const langCode = langToggle ? langToggle.querySelector('.lang-code') : null;
+
+    const setLanguage = (lang) => {
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+        if (langCode) langCode.textContent = lang === 'ar' ? 'EN' : 'AR';
+
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[lang][key]) {
+                el.innerHTML = translations[lang][key];
+            }
+        });
+
+        // Re-split and re-animate if on desktop
+        splitTextIntoChars();
+        if (allSections[currentSectionIndex]) {
+            allSections[currentSectionIndex].classList.remove('animate');
+            void allSections[currentSectionIndex].offsetWidth;
+            allSections[currentSectionIndex].classList.add('animate');
+        }
+
+        localStorage.setItem('preferred-lang', lang);
+    };
+
+    if (langToggle) {
+        langToggle.addEventListener('click', () => {
+            if (isTransitioning) return;
+
+            const newLang = document.documentElement.lang === 'en' ? 'ar' : 'en';
+
+            // Start smooth transition sequence
+            isTransitioning = true;
+            transitionTitle.textContent = newLang === 'ar' ? 'العربية' : 'ENGLISH';
+            overlay.classList.add('active');
+
+            // Mid-wipe swap
+            setTimeout(() => {
+                const main = document.getElementById('main-content');
+                if (main) main.style.opacity = '0';
+
+                setLanguage(newLang);
+
+                // Final reveal
+                setTimeout(() => {
+                    if (main) main.style.opacity = '1';
+                    overlay.classList.remove('active');
+                    isTransitioning = false;
+                }, 500);
+            }, 400);
+        });
+    }
+
+    // Init Language
+    const savedLang = localStorage.getItem('preferred-lang') || 'en';
+    if (savedLang !== 'en') setLanguage(savedLang);
 
     // Digital CV Toggle Logic
     const cvTrigger = document.getElementById('cv-trigger');
