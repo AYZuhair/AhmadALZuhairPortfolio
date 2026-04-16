@@ -1446,6 +1446,24 @@ html[dir="rtl"] .timeline-item::before {
     right: -35px;
 }
 
+/* Arabic Heading Animations (Full Title Reveal) */
+html[lang="ar"] .main-title,
+html[lang="ar"] .section-heading,
+html[lang="ar"] .accent-text {
+    opacity: 0;
+}
+
+html[lang="ar"] .section.animate .main-title,
+html[lang="ar"] .section.animate .section-heading,
+html[lang="ar"] .section.animate .accent-text {
+    animation: fadeUpReveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeUpReveal {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 html[dir="rtl"] .cv-timeline {
     border-left: none;
     border-right: 1px dashed var(--dot-color);

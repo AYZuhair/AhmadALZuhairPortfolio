@@ -294,18 +294,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Handle Touch (Mobile)
     let touchStartY = 0;
+    let isTouchOnScrollable = false;
+
     window.addEventListener('touchstart', (e) => {
         touchStartY = e.touches[0].clientY;
-    });
+        // Check if swiping inside something that should handle its own scrolling
+        isTouchOnScrollable = !!e.target.closest('.projects-grid-wrapper, #cv-overlay, .taalomy-showcase');
+    }, { passive: true });
 
     window.addEventListener('touchend', (e) => {
+        if (isTouchOnScrollable || isTransitioning) return;
+        
         const now = Date.now();
-        if (now - lastScrollTime < scrollCooldown || isTransitioning) return;
+        if (now - lastScrollTime < scrollCooldown) return;
 
         const touchEndY = e.changedTouches[0].clientY;
         const deltaY = touchStartY - touchEndY;
 
-        if (Math.abs(deltaY) > 100) {
+        // Increased threshold to 150px for more deliberate swipes
+        if (Math.abs(deltaY) > 150) {
             if (deltaY > 0) {
                 // Swipe up -> Next
                 if (currentSectionIndex < sections.length - 1) {
@@ -320,7 +327,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         }
-    });
+    }, { passive: true });
 
     // Projects Button in Hero
     const nextBtn = document.getElementById('next-section-btn');
@@ -365,6 +372,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const updateClock = () => {
             const now = new Date();
+            const timeStr = now.toLocaleTimeString('en-GB', {
+                timeZone: 'Asia/Riyadh',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            });
             const currentLang = document.documentElement.lang || 'en';
             const suffix = currentLang === 'ar' ? ' ت.غ+٣' : ' GMT+3';
             timeElement.textContent = `${timeStr}${suffix}`;
