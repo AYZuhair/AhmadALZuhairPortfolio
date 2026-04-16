@@ -220,17 +220,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     window.addEventListener('touchend', (e) => {
-        if (isTransitioning) return;
+        const now = Date.now();
+        if (now - lastScrollTime < scrollCooldown || isTransitioning) return;
+        
         const touchEndY = e.changedTouches[0].clientY;
         const deltaY = touchStartY - touchEndY;
 
-        if (Math.abs(deltaY) > 50) {
+        if (Math.abs(deltaY) > 100) {
             if (deltaY > 0) {
                 // Swipe up -> Next
-                if (currentSectionIndex < sections.length - 1) navigateToSection(currentSectionIndex + 1);
+                if (currentSectionIndex < sections.length - 1) {
+                    lastScrollTime = now;
+                    navigateToSection(currentSectionIndex + 1);
+                }
             } else {
                 // Swipe down -> Previous
-                if (currentSectionIndex > 0) navigateToSection(currentSectionIndex - 1);
+                if (currentSectionIndex > 0) {
+                    lastScrollTime = now;
+                    navigateToSection(currentSectionIndex - 1);
+                }
             }
         }
     });

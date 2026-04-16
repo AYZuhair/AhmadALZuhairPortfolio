@@ -856,31 +856,161 @@ html[data-theme='dark'] .link-chip:hover {
 
 /* Mobile Polish & Hardening */
 @media (max-width: 768px) {
-    .section { padding: 40px 20px; }
-    .main-title { font-size: 3.2rem; line-height: 1.1; margin-bottom: 10px; }
-    .accent-text { font-size: 0.8rem; letter-spacing: 0.2em; }
+    .section { padding: 80px 20px; }
+    .content { padding: 80px 20px; }
     
-    .hero { gap: 40px; }
-    .image-container { width: 260px; height: 320px; }
+    .hero { 
+        display: flex;
+        flex-direction: column;
+        gap: 50px; 
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .hero-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-title { 
+        font-size: 3.5rem; 
+        line-height: 1; 
+        margin: 15px 0;
+    }
+    
+    .accent-text { font-size: 0.85rem; letter-spacing: 0.15em; }
+    
+    .status-container { 
+        justify-content: center; 
+        margin-top: 20px;
+    }
+    
+    .hero-image-wrapper { 
+        width: 100%;
+        display: flex; 
+        justify-content: center; 
+    }
+    
+    .image-container { 
+        width: 280px; 
+        height: 350px;
+        padding: 15px;
+        margin: 0 auto;
+    }
+    
+    .scroll-hint { 
+        bottom: 80px; 
+    }
+
+    .btn-scroll {
+        padding: 14px 30px;
+        font-size: 1rem;
+    }
     
     /* Shrink decos on mobile so they don't block content */
     .deco.square {
-        transform: scale(0.6);
-        opacity: 0.1 !important;
+        transform: scale(0.5);
+        opacity: 0.05 !important;
         pointer-events: none;
     }
     
-    .sq-projects-1 { left: -100px; }
-    .sq-stack-1 { top: 5%; right: 2%; }
+    .sq-projects-1 { left: -120px; }
+    .sq-stack-1 { top: 2%; right: 2%; }
     
+    /* Stack Optimization */
     .stack-grid {
         grid-template-columns: repeat(3, 1fr);
-        margin-top: 20px;
+        margin-top: 30px;
+        border: none;
+    }
+
+    .stack-item {
+        padding: 15px;
+        border: 1px dashed var(--nav-border);
+    }
+    
+    .stack-icon {
+        width: 32px;
+        height: 32px;
+        margin-bottom: 8px;
+    }
+
+    .stack-name { font-size: 0.65rem; }
+
+    .project-card {
+        padding: 30px;
+    }
+
+    .section-heading {
+        font-size: 2.8rem;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .section { 
+        padding-bottom: 120px; /* Clear the bottom nav pill */
+    }
+
+    /* Projects Overhaul (Premium Mobile) */
+    .taalomy-showcase {
+        padding: 25px 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        border-style: solid;
+        border-width: 1px;
+    }
+
+    .taalomy-visual {
+        order: -1;
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .macbook-mockup {
+        width: 100%;
+    }
+
+    .macbook-screen {
+        border: none;
+        padding: 0;
+        background: transparent;
+        aspect-ratio: 16/10;
+        height: auto;
+        min-height: 220px;
+        max-height: 280px;
+        border-radius: 15px;
+    }
+
+    .macbook-base { display: none; } /* Hide the laptop base on mobile */
+
+    .slide {
+        border-radius: 15px;
+        object-fit: cover;
+    }
+
+    .taalomy-info {
+        text-align: center;
+    }
+
+    .taalomy-info h3 { font-size: 1.8rem; }
+    .project-brief { font-size: 0.95rem; margin-bottom: 20px; }
+    .project-bullets { margin-bottom: 25px; text-align: left; }
+    .project-bullets li { font-size: 0.9rem; padding-left: 25px; }
+
+    /* Navigation */
+    .navbar {
+        bottom: 20px;
+        width: 90%;
+        display: flex;
+        justify-content: center;
     }
 
     .nav-pill {
-        padding: 8px 15px;
-        gap: 15px;
+        padding: 6px 12px;
+        gap: 8px;
+        width: auto;
     }
     
     .nav-label { display: none; } /* Icons only on mobile nav for space */
@@ -913,9 +1043,13 @@ html[data-theme='dark'] .dark-logo { display: block; }
 @media (max-width: 480px) {
     .site-branding { top: 15px; left: 15px; }
     .brand-logo { height: 28px; }
-    .main-title { font-size: 2.8rem; }
+    .main-title { font-size: 2.8rem; letter-spacing: -0.02em; }
+    .accent-text { font-size: 0.75rem; }
     .stack-grid { grid-template-columns: repeat(2, 1fr); }
-    .section-heading { font-size: 2.5rem; }
+    .section-heading { font-size: 2.2rem; }
+    .image-container { width: 220px; height: 280px; padding: 10px; }
+    .section { padding: 60px 15px 120px; }
+    .content { padding: 60px 15px 120px; }
 }
 
 /* Contact Overhaul */
@@ -1173,11 +1307,20 @@ html[data-theme='dark'] .dark-logo { display: block; }
 /* Mobile Contact */
 @media (max-width: 1024px) {
     .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-    .contact-narrative { grid-template-columns: 1fr; }
+    .contact-narrative { grid-template-columns: 1fr; gap: 20px; }
     .contact-narrative .narrative-card:first-child { grid-column: span 1; }
-    .contact-info-side { padding: 30px; }
-    .contact-layout { padding-top: 140px; }
-    .contact-link { font-size: 1.4rem; }
+    
+    .narrative-card { padding: 30px; text-align: center; }
+    .narrative-card::before { left: 50%; top: 0; width: 60%; height: 4px; transform: translateX(-50%); border-radius: 0 0 4px 4px; }
+    .narrative-card:hover { transform: translateY(-5px); }
+    .narrative-card:hover::before { width: 80%; height: 4px; }
+
+    .contact-info-side { padding: 40px 20px; text-align: center; gap: 35px; }
+    .contact-info-side::before { top: 0; right: 50%; transform: translateX(50%); width: 40%; height: 4px; border-radius: 0 0 4px 4px; }
+    
+    .social-grid { justify-content: center; }
+    .contact-layout { padding-top: 100px; }
+    .contact-link { font-size: 1.2rem; word-break: break-all; }
 }
 
 /* Contact Light Theme Hardening */
