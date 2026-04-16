@@ -139,7 +139,15 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     if (themeToggle && themeWipe) {
-        themeToggle.addEventListener('click', () => {
+        themeToggle.addEventListener('click', (e) => {
+            const rect = themeToggle.getBoundingClientRect();
+            const x = rect.left + rect.width / 2;
+            const y = rect.top + rect.height / 2;
+            
+            themeWipe.style.transition = 'none';
+            themeWipe.style.setProperty('--wipe-x', `${x}px`);
+            themeWipe.style.setProperty('--wipe-y', `${y}px`);
+
             const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
             const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
             
@@ -149,28 +157,25 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Trigger reflow to ensure display change applies before transition
             void themeWipe.offsetWidth;
+            themeWipe.style.transition = '';
             
             themeWipe.classList.add('active');
             
+            // Instantly apply the theme change so the background doesn't transition late
+            document.documentElement.setAttribute('data-theme', targetTheme);
+            document.body.setAttribute('data-theme', targetTheme);
+            localStorage.setItem('theme', targetTheme);
+            updateFavicon(targetTheme);
+            
             setTimeout(() => {
-                // 1. Set data attributes
-                document.documentElement.setAttribute('data-theme', targetTheme);
-                document.body.setAttribute('data-theme', targetTheme);
+                themeWipe.classList.remove('active');
                 
-                // 2. Save & update other elements
-                localStorage.setItem('theme', targetTheme);
-                updateFavicon(targetTheme);
-                
+                // Cleanup inline styles completely after transition
                 setTimeout(() => {
-                    themeWipe.classList.remove('active');
-                    
-                    // Cleanup inline styles completely after transition
-                    setTimeout(() => {
-                        themeWipe.style.backgroundColor = '';
-                        themeWipe.style.display = 'none';
-                    }, 800); // 800ms matches the CSS transition length
-                }, 500);
-            }, 400);
+                    themeWipe.style.backgroundColor = '';
+                    themeWipe.style.display = 'none';
+                }, 800); // 800ms matches the CSS transition length
+            }, 500);
         });
     }
 
