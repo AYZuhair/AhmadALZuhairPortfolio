@@ -166,6 +166,10 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.setAttribute('data-theme', targetTheme);
             localStorage.setItem('theme', targetTheme);
             updateFavicon(targetTheme);
+
+            // Update Meta Theme Color for Edge-to-Edge
+            const metaTheme = document.getElementById('meta-theme-color');
+            if (metaTheme) metaTheme.setAttribute('content', targetBg);
             
             setTimeout(() => {
                 themeWipe.classList.remove('active');
