@@ -70,6 +70,29 @@ body {
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
+#main-content {
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;
+    will-change: transform, opacity, filter;
+    perspective: 1500px;
+}
+
+#main-content.transitioning {
+    transform: scale(0.9) translateZ(-100px);
+    opacity: 0.3;
+    filter: blur(10px);
+    pointer-events: none;
+}
+
+.section {
+    transform-style: preserve-3d;
+}
+
+.tilt-card {
+    transform-style: preserve-3d;
+    transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+}
+
 html[data-theme='dark'] body {
     background-color: #0A0F0B; /* Hardcoded Dark */
     background-image: 

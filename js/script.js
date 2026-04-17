@@ -152,6 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Start overlay animation
         overlay.classList.add('active');
+        if (mainContent) mainContent.classList.add('transitioning');
 
         // Swap sections midway through animation
         setTimeout(() => {
@@ -175,6 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Trigger character animation after overlay is gone
                 setTimeout(() => {
                     allSections[currentSectionIndex].classList.add('animate');
+                    if (mainContent) mainContent.classList.remove('transitioning');
                     isTransitioning = false;
                 }, 100);
             }, 500);
@@ -427,17 +429,21 @@ document.addEventListener('DOMContentLoaded', () => {
             isTransitioning = true;
             transitionTitle.textContent = newLang === 'ar' ? 'العربية' : 'ENGLISH';
             overlay.classList.add('active');
-
+            if (mainContent) mainContent.classList.add('transitioning');
+            
             // Mid-wipe swap
             setTimeout(() => {
                 const main = document.getElementById('main-content');
                 if (main) main.style.opacity = '0';
-
+                
                 setLanguage(newLang);
-
+                
                 // Final reveal
                 setTimeout(() => {
-                    if (main) main.style.opacity = '1';
+                    if (main) {
+                        main.style.opacity = '1';
+                        main.classList.remove('transitioning');
+                    }
                     overlay.classList.remove('active');
                     isTransitioning = false;
                 }, 500);
@@ -480,4 +486,34 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // 3D Tilt Effect for Cards
+    const initTiltEffect = () => {
+        // Disable tilt on mobile for performance
+        if (window.innerWidth <= 768) return;
+
+        const cards = document.querySelectorAll('.tilt-card');
+        
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                // Max rotation: 5 degrees
+                const rotateX = (centerY - y) / (centerY / 5);
+                const rotateY = (x - centerX) / (centerX / 5);
+                
+                card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+            });
+        });
+    };
+    initTiltEffect();
 });
