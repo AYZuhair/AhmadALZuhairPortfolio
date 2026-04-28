@@ -23,9 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
             'p-eco': 'ECOSYSTEM', 'p-tareekna': 'Lead Frontend for a ride-sharing powerhouse. Real-time tracking and fare estimation for User, Driver, and Admin apps.',
             'p-tele': 'TELEMETRY', 'p-mazraty': 'Remote farm monitoring system providing real-time telemetry and push notifications for agricultural optimization.',
             'p-corp': 'CORPORATE', 'p-sfd': 'High-performance corporate site featuring deep theme customization and an integrated conversational AI assistant.',
-            'p-intel': 'INTELLIGENCE', 'p-agents': '40+ specialized agents developed in TypeScript for social content, blogs, and narrative-to-image automation.',
+            'p-intel': 'INTELLIGENCE', 'p-agents': '17+ specialized agents developed in TypeScript for social content, blogs, and narrative-to-image automation.',
+            'kooper-tag': 'AGENT ECOSYSTEM', 'kooper-name': 'Kooper AI', 'kooper-role': 'Lead AI Ops Engineer',
+            'kooper-brief': 'A branded suite of 17+ specialized AI agents designed for high-fidelity content generation, social automation, and narrative synthesis.',
+            'kooper-b1': 'Integrated 17+ agents for blogs, social media, and image generation.',
+            'kooper-b2': 'Developed using TypeScript with Llama 3.2 and GPT-4o models.',
+            'kooper-b3': 'Advanced UI/UX for seamless agent interaction and workflow management.',
             'contact-intro': 'OPPORTUNITIES & COLLABS', 'contact-title': 'LET\'S<br>CONNECT',
-            'c-about-h': 'About Me', 'c-about-p': 'Lead Frontend Developer & AI Ops Engineer at SFD. I specialize in crafting intuitive interfaces and architecting AI solutions that bridge the gap between complex technology and human experience.',
+            'c-about-h': 'About Me', 'c-about-p': 'Lead Frontend Developer & AI Ops Engineer at Taalomy. I specialize in crafting intuitive interfaces and architecting AI solutions that bridge the gap between complex technology and human experience.',
             'c-vision-h': 'Vision', 'c-vision-p': 'To transform cutting-edge AI into seamless, accessible daily experiences that empower users and redefine digital interaction through advanced UI/UX and intelligent automation.',
             'c-mission-h': 'Mission', 'c-mission-p': 'Engineering robust, scalable, and high-performance systems with a relentless focus on engineering rigor, design excellence, and real-world impact in the global and Saudi tech sectors.',
             'contact-direct': 'Direct Reach', 'contact-follow': 'Connect & Follow', 'location': 'RIYADH, KSA',
@@ -33,8 +38,11 @@ document.addEventListener('DOMContentLoaded', () => {
             'cv-summary-title': 'Executive Summary', 'cv-summary-text': 'Dedicated and innovative developer with dual expertise in AI Operations Engineering and Frontend Development. Specializing in designing intuitive interfaces and developing tailored AI solutions for the Middle Eastern market.',
             'cv-edu-title': 'Education', 'cv-edu-1-h': 'B.Eng in Computer Engineering', 'cv-edu-1-p': 'Asia Pacific University (APU) — 2025', 'cv-edu-2-h': 'Bachelor\'s Studies', 'cv-edu-2-p': 'De Montfort University (DMU), UK',
             'cv-philo-title': 'Philosophy', 'cv-p1': 'Product Thinking over pure coding', 'cv-p2': 'Architecture with Typed Boundaries', 'cv-p3': 'Composition over Inheritance',
-            'cv-journey-title': 'Professional Journey', 'cv-exp1-h': 'Lead Frontend Developer | SFD', 'cv-exp1-p': 'Architected the Tareekna Ecosystem (User, Driver, Admin) and the Acadex institutional platform. Leveraged React Native, Expo, and WebSockets for real-time telemetry.',
-            'cv-exp2-h': 'Junior AI Ops Engineer | Devan & Co', 'cv-exp2-p': 'Developed a suite of 40+ specialized AI agents. Fine-tuned and deployed LLMs (Llama, Qwen) at scale for social and marketing automation.',
+            'cv-journey-title': 'Professional Journey', 
+            'cv-exp1-h': 'Lead Frontend Developer | Taalomy', 
+            'cv-exp1-p': 'Created the entire frontend for Admin, Student, and Lecturer platforms. Implemented WebSockets and Socket.io for real-time messaging and data loading. Engineered AI automation for lecturers to automate tasks.',
+            'cv-exp2-h': 'Junior AI Ops Engineer | Devan & Co', 
+            'cv-exp2-p': 'Architected a 40+ AI agent system. Specialized in fine-tuning and deploying LLMs (Llama, Qwen) at scale for social and marketing automation.',
             'cv-exp3-h': 'Technical Assistant | APU', 'cv-exp3-p': 'Managed IT infrastructure and resolved systems issues for university laboratories.',
             'cv-tech-title': 'Technical Command', 'cv-download': 'Download PDF Version',
             'utc': 'UTC+03:00'
@@ -53,9 +61,14 @@ document.addEventListener('DOMContentLoaded', () => {
             'p-eco': 'نظام بيئي', 'p-tareekna': 'رئيس مطوري الواجهات لمنصة Tareekna. تتبع في الوقت الفعلي وتقدير الأجرة لتطبيقات المستخدم والسائق والمسؤول.',
             'p-tele': 'القياس عن بُعد', 'p-mazraty': 'نظام مراقبة المزارع عن بُعد يوفر بيانات القياس في الوقت الفعلي وإشعارات لتحسين الزراعة.',
             'p-corp': 'مؤسسي', 'p-sfd': 'موقع مؤسسي عالي الأداء يتميز بتخصيص عميق للثيم ومساعد ذكاء اصطناعي محادث مدمج.',
-            'p-intel': 'ذكاء', 'p-agents': 'أكثر من 40 وكيلاً متخصصاً تم تطويرهم بلغة TypeScript للمحتوى الاجتماعي والمدونات والأتمتة.',
+            'p-intel': 'ذكاء', 'p-agents': 'أكثر من 17 وكيلاً متخصصاً تم تطويرهم بلغة TypeScript للمحتوى الاجتماعي والمدونات والأتمتة.',
+            'kooper-tag': 'نظام الوكلاء البيئي', 'kooper-name': 'Kooper AI', 'kooper-role': 'رئيس مهندسي عمليات الذكاء الاصطناعي',
+            'kooper-brief': 'مجموعة متميزة من 17+ وكيلاً ذكياً متخصصاً مصممة لإنشاء محتوى عالي الجودة وأتمتة الوسائط الاجتماعية وتوليف السرد.',
+            'kooper-b1': 'دمج 17+ وكيلاً للمدونات ووسائل التواصل الاجتماعي وتوليد الصور.',
+            'kooper-b2': 'تم التطوير باستخدام TypeScript مع نماذج Llama 3.2 و GPT-4o.',
+            'kooper-b3': 'واجهة مستخدم متقدمة للتفاعل السلس مع الوكلاء وإدارة سير العمل.',
             'contact-intro': 'الفرص والتعاون', 'contact-title': 'لنتواصل<br>',
-            'c-about-h': 'من أنا', 'c-about-p': 'رئيس مطوري الواجهة الأمامية ومهندس عمليات الذكاء الاصطناعي في SFD. أتخصص في صياغة واجهات بديهية وبناء حلول ذكاء اصطناعي تربط بين التكنولوجيا المعقدة والتجربة البشرية.',
+            'c-about-h': 'من أنا', 'c-about-p': 'رئيس مطوري الواجهة الأمامية ومهندس عمليات الذكاء الاصطناعي في تعلمي. أتخصص في صياغة واجهات بديهية وبناء حلول ذكاء اصطناعي تربط بين التكنولوجيا المعقدة والتجربة البشرية.',
             'c-vision-h': 'الرؤية', 'c-vision-p': 'تحويل الذكاء الاصطناعي المتطور إلى تجارب يومية سلسة ومتاحة تمكن المستخدمين وتعيد تعريف التفاعل الرقمي من خلال واجهة مستخدم متقدمة وأتمتة ذكية.',
             'c-mission-h': 'المهمة', 'c-mission-p': 'هندسة وأنظمة قوية وقابلة للتطوير وعالية الأداء مع تركيز لا يلين على الصرامة الهندسية وتميز التصميم والأثر الحقيقي في القطاعات التقنية العالمية والسعودية.',
             'contact-direct': 'التواصل المباشر', 'contact-follow': 'تابعني وتواصل معي', 'location': 'الرياض، المملكة العربية السعودية',
@@ -63,8 +76,11 @@ document.addEventListener('DOMContentLoaded', () => {
             'cv-summary-title': 'الملخص التنفيذي', 'cv-summary-text': 'مطور مبتكر متخصص مع خبرة مزدوجة في هندسة عمليات الذكاء الاصطناعي وتطوير الواجهات الأمامية. متخصص في تصميم واجهات بديهية وتطوير حلول ذكاء اصطناعي مخصصة للسوق الشرق أوسطي.',
             'cv-edu-title': 'التعليم', 'cv-edu-1-h': 'بكالوريوس هندسة الحاسوب', 'cv-edu-1-p': 'جامعة آسيا والمحيط الهادئ (APU) - 2025', 'cv-edu-2-h': 'دراسات البكالوريوس', 'cv-edu-2-p': 'جامعة دي مونتفورت (DMU)، المملكة المتحدة',
             'cv-philo-title': 'الفلسفة الهندسية', 'cv-p1': 'التفكير في المنتج قبل الكود', 'cv-p2': 'بنية برمجية بحدود واضحة النوع', 'cv-p3': 'التركيب بدلاً من الوراثة البرمجية',
-            'cv-journey-title': 'الرحلة المهنية', 'cv-exp1-h': 'رئيس مطوري الواجهة الأمامية | SFD', 'cv-exp1-p': 'هندسة نظام Tareekna البيئي وبوابة Acadex المؤسسية. استخدام React Native و WebSockets للقياس عن بُعد في الوقت الفعلي.',
-            'cv-exp2-h': 'مهندس عمليات ذكاء اصطناعي | Devan & Co', 'cv-exp2-p': 'تطوير مجموعة من 40+ وكيلاً ذكياً. ضبط ونشر نماذج اللغات الكبيرة (Llama, Qwen) على نطاق واسع.',
+            'cv-journey-title': 'الرحلة المهنية', 
+            'cv-exp1-h': 'رئيس مطوري الواجهة الأمامية | تعلمي', 
+            'cv-exp1-p': 'إنشاء واجهات المستخدم بالكامل لمنصات المسؤول والطالب والمحاضر. تنفيذ WebSockets و Socket.io للمراسلة الفورية وتحميل البيانات. هندسة أتمتة الذكاء الاصطناعي للمحاضرين لأتمتة المهام.',
+            'cv-exp2-h': 'مهندس عمليات ذكاء اصطناعي | Devan & Co', 
+            'cv-exp2-p': 'بناء نظام مكون من 40+ وكيل ذكاء اصطناعي. متخصص في ضبط ونشر نماذج اللغات الكبيرة (Llama, Qwen) على نطاق واسع لأتمتة التسويق.',
             'cv-exp3-h': 'مساعد تقني | جامعة APU', 'cv-exp3-p': 'إدارة البنية التحتية لتكنولوجيا المعلومات وحل مشكلات الأنظمة للمختبرات الجامعية.',
             'cv-tech-title': 'القيادة التقنية', 'cv-download': 'تحميل نسخة PDF',
             'utc': 'التوقيت العالمي +٠٣:٠٠'
@@ -178,6 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     allSections[currentSectionIndex].classList.add('animate');
                     if (mainContent) mainContent.classList.remove('transitioning');
                     isTransitioning = false;
+                    edgeReachedTime = 0; // Reset edge delay on section change
                 }, 100);
             }, 500);
         }, 400);
@@ -274,23 +291,51 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle Scroll/Wheel
     let lastScrollTime = 0;
     const scrollCooldown = 1500; // ms
+    let edgeReachedTime = 0;
+    const edgeDelay = 300; // ms delay after hitting bottom/top before allowing transition
 
     window.addEventListener('wheel', (e) => {
         const now = Date.now();
         if (now - lastScrollTime < scrollCooldown || isTransitioning) return;
 
+        const currentSection = allSections[currentSectionIndex];
+        const isScrollable = currentSection.scrollHeight > currentSection.clientHeight + 1;
+        const isAtBottom = currentSection.scrollTop + currentSection.clientHeight >= currentSection.scrollHeight - 1;
+        const isAtTop = currentSection.scrollTop <= 0;
+
         if (e.deltaY > 50) {
             // Scroll down -> Next
             if (currentSectionIndex < sections.length - 1) {
-                lastScrollTime = now;
-                navigateToSection(currentSectionIndex + 1);
+                if (!isScrollable || isAtBottom) {
+                    if (edgeReachedTime === 0) {
+                        edgeReachedTime = now;
+                    } else if (now - edgeReachedTime > edgeDelay) {
+                        lastScrollTime = now;
+                        edgeReachedTime = 0;
+                        navigateToSection(currentSectionIndex + 1);
+                    }
+                } else {
+                    edgeReachedTime = 0;
+                }
             }
         } else if (e.deltaY < -50) {
             // Scroll up -> Previous
             if (currentSectionIndex > 0) {
-                lastScrollTime = now;
-                navigateToSection(currentSectionIndex - 1);
+                if (!isScrollable || isAtTop) {
+                    if (edgeReachedTime === 0) {
+                        edgeReachedTime = now;
+                    } else if (now - edgeReachedTime > edgeDelay) {
+                        lastScrollTime = now;
+                        edgeReachedTime = 0;
+                        navigateToSection(currentSectionIndex - 1);
+                    }
+                } else {
+                    edgeReachedTime = 0;
+                }
             }
+        } else {
+            // Reset if they stop or move small amounts
+            // Note: wheel events are frequent, so we might want to be careful here
         }
     });
 
@@ -305,7 +350,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
 
     window.addEventListener('touchend', (e) => {
-        if (isTouchOnScrollable || isTransitioning) return;
+        if (isTransitioning) return;
         
         const now = Date.now();
         if (now - lastScrollTime < scrollCooldown) return;
@@ -313,19 +358,28 @@ document.addEventListener('DOMContentLoaded', () => {
         const touchEndY = e.changedTouches[0].clientY;
         const deltaY = touchStartY - touchEndY;
 
+        const currentSection = allSections[currentSectionIndex];
+        const isScrollable = currentSection.scrollHeight > currentSection.clientHeight + 1;
+        const isAtBottom = currentSection.scrollTop + currentSection.clientHeight >= currentSection.scrollHeight - 1;
+        const isAtTop = currentSection.scrollTop <= 0;
+
         // Increased threshold to 150px for more deliberate swipes
         if (Math.abs(deltaY) > 150) {
             if (deltaY > 0) {
-                // Swipe up -> Next
+                // Swipe up -> Next (Scrolling Down)
                 if (currentSectionIndex < sections.length - 1) {
-                    lastScrollTime = now;
-                    navigateToSection(currentSectionIndex + 1);
+                    if (!isScrollable || isAtBottom) {
+                        lastScrollTime = now;
+                        navigateToSection(currentSectionIndex + 1);
+                    }
                 }
             } else {
-                // Swipe down -> Previous
+                // Swipe down -> Previous (Scrolling Up)
                 if (currentSectionIndex > 0) {
-                    lastScrollTime = now;
-                    navigateToSection(currentSectionIndex - 1);
+                    if (!isScrollable || isAtTop) {
+                        lastScrollTime = now;
+                        navigateToSection(currentSectionIndex - 1);
+                    }
                 }
             }
         }
@@ -366,6 +420,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     };
     initTaalomySlider();
+
+    // Kooper AI Slider Logic
+    const initKooperSlider = () => {
+        const slides = document.querySelectorAll('#kooper-slider .slide');
+        if (slides.length === 0) return;
+
+        let currentSlide = 0;
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 3000);
+    };
+    initKooperSlider();
 
     // 1. Local Time Clock (Riyadh/Jeddah)
     const initClock = () => {
